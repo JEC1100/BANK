@@ -1,12 +1,18 @@
+# frozen_string_literal: true
+
 require 'transaction'
 
 RSpec.describe Transaction do
   let(:value) { 4 }
-  
+
   subject(:transaction) { described_class.new(value, type) }
 
-  describe '#credit' do
+  context '#deposit' do
     let(:type) { :credit }
+
+    it 'returns a postive value' do
+      expect(transaction.credit).to eq value
+    end
   end
-  
+
 end
