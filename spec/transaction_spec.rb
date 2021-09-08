@@ -15,4 +15,12 @@ RSpec.describe Transaction do
     end
   end
 
+  context '#debit' do
+    let(:type) { :debit }
+
+    it 'returns a negative value' do
+      expect(transaction.debit).to eq(-value)
+    end
+  end
+
 end
