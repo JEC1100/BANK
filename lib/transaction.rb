@@ -1,9 +1,12 @@
-# frozen_string_literal: true
+require_relative 'formats/date'
 
 class Transaction
+  include Formats::Date
+
   def initialize(value, type)
     @value = value
     @type = type
+    @date = Time.now
   end
 
   def credit
@@ -12,6 +15,10 @@ class Transaction
 
   def debit
     -value if debit?
+  end
+
+  def date
+    p formatted(@date)
   end
 
   private
