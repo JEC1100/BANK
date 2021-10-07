@@ -2,4 +2,4 @@
 
 ### step-by-step
 
-#### Obeseving single responsibilty principle
+#### Observing the single responsibilty principle
